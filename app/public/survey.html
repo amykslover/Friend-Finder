@@ -25,6 +25,14 @@
 	h4 {
 		padding-top: 10px;
 	}
+	.jumbotron {
+		background: #5A657E;
+		color: white;
+	}
+
+	.container {
+		width: 70%;
+	}
 	.center {
 		text-align: center;
 	}
@@ -54,7 +62,7 @@
 	.value {
 		font-weight: bold !important;
 		text-align: center;
-		padding-right: 125px;
+		padding-right: 80px;
 	}
 	#slidecontainer {
 	    width: 100%;
@@ -99,17 +107,19 @@
 <body>
 
 	<div class="jumbotron center">
-		<h2>Survey Questions</h2>
+		<h1>Personality Profile</h1>
 	</div>
 
 	<div class="container">
 		<h3><strong>About You</strong></h3>
 		<hr>
-		<h4>Name</h4>
-		<input type="text" name="" id="name" class="form-control" required >
-
-		<h4>Upload Photo</h4>
-		<input type="text" name="" id="photo" class="form-control" required >
+		<form>	
+			<h4>Name</h4>
+			<input type="text" name="" id="name" class="form-control" placeholder="John Doe" required>
+			
+			<h4>Upload Photo</h4>
+			<input type="text" name="" id="photo" class="form-control" placeholder="url" required>
+		</form>
 
 		<hr>
 
@@ -264,17 +274,15 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h2 class="modal-title" id="exampleModalLabel">Your New Best Friend!</h2>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
+        <h2 class="modal-title" id="exampleModalLabel">Your Best Friend Match is: </h2>
       </div>
+
       <div id="placeholders" class="modal-body center">
       	<div id="imgholder">
-			<img id="friendimage" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRtlUGX9LFh7GGN5AYjNY3slDW9mUohn-K1KAc60LVYaBvW6no4cQ" alt="Placeholder Friend">
+			<img id="friendimage" src="http://1rooffamilies.org/wp-content/uploads/2016/09/person_placeholder.png" alt="Placeholder Friend">
       	</div>
       	<div>
-      		<h2 id="nameholder">New Friend</h2>
+      		<h3 id="nameholder">New Friend</h2>
       	</div>
       </div>
       <div class="modal-footer">
@@ -408,9 +416,15 @@
 	            console.log(data.photo);
 	            console.log(data.name);
 
-	            $("#friendimage").attr("src",data.photo);
 	            $("#nameholder").text(data.name);
+	            
+	            if(data.photo == "") {	
+	            	$("#friendimage").attr("src","https://optimizehq.imgix.net/old-optimize-imgix/authors/author-image-placeholder.png?w=156&dpr=2&auto=format");
+	            }
+	            else
+	            	$("#friendimage").attr("src",data.photo);
 	          }
+
 	          else {
 	            alert("Sorry, you weren't added to our database.");
 	          }
