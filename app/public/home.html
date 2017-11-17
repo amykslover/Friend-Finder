@@ -10,24 +10,38 @@
 			text-align: center !important;
 		}
 
+		.jumbotron {
+			background: #5A657E;
+			color: white;
+
+		}
+
 	</style>
 </head>
 <body>
-<div class="container-fluid center">
-	<div class="jumbotron">
+	<div class="jumbotron center">
 		<h1>Friend Finder</h1><br>
-		
-		<h3>Answer a few basic questions to identify a friend!</h3>
+		<h3>Answer some questions and we'll find you a friend!</h3>
 
 		<br>
 
+	</div>
+
+	<div class="container-fluid center">
 		<a href="/survey">		
 		<button type="button" class="btn btn-primary" id="surveybutton"><span class="glyphicon glyphicon-list-alt"></span> Go to Survey</button>
 		</a>
+		
+		<div>
+			<img src="https://s-i.huffpost.com/gen/3337822/images/n-FRIENDS-628x314.jpg">
+		</div>
+	<hr>
+		<footer class="footer">
+	      <div class="container center">
+		        <p><a href="/api/friends">API Friends List</a> | <a href="https://github.com/amykslover/Friend-Finder">GitHub Repo</a></p>
+	      </div>
+	    </footer>
 	</div>
-
-	<a href="/api/friends">API Friends List</a> | <a href="https://github.com/amykslover/Friend-Finder" target="_blank">GitHub Repo</a>
-</div>
 
 </body>
 </html>
