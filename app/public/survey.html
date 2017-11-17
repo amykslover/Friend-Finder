@@ -1,0 +1,389 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>FriendFinder</title>
+
+	<!-- Latest compiled and minified CSS & JS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+	<script src="https://code.jquery.com/jquery.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+	<!-- Font Awesome Glyphicons -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+	<link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
+	<!-- Chosen -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.5.1/chosen.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.5.1/chosen.jquery.min.js"></script>
+	<style>
+	
+	body {
+		font-family: 'Roboto';
+		font-size: 16px;
+	}
+	h4 {
+		padding-top: 10px;
+	}
+	
+	.scale {
+		padding-top: 15px;
+		display: flex;
+		justify-content: space-between;
+
+	}
+
+	.disagree {
+		font-weight: bold !important;
+		width: 33%;
+		text-align: left;
+
+	}
+	.agree {
+		font-weight: bold !important;
+		width: 33%;
+		text-align: right;
+
+	}
+
+	.value {
+		font-weight: bold !important;
+		text-align: center;
+		padding-right: 125px;
+	}
+	#slidecontainer {
+	    width: 100%;
+	    padding-top: 10px;
+	}
+
+	.slider {
+	    -webkit-appearance: none;
+	    width: 100%;
+	    height: 15px;
+	    border-radius: 5px;
+	    background: #d3d3d3;
+	    outline: none;
+	    opacity: 0.7;
+	    -webkit-transition: .2s;
+	    transition: opacity .2s;
+	}
+
+	.slider:hover {
+	    opacity: 1;
+	}
+
+	.slider::-webkit-slider-thumb {
+	    -webkit-appearance: none;
+	    appearance: none;
+	    width: 25px;
+	    height: 25px;
+	    border-radius: 50%;
+	    background: #4c8aaf;
+	    cursor: pointer;
+	}
+
+	.slider::-moz-range-thumb {
+	    width: 25px;
+	    height: 25px;
+	    border-radius: 50%;
+	    background: #4c8aaf;
+	    cursor: pointer;
+	}
+	</style>
+</head>
+<body>
+
+	<div class="container">
+
+		<h2>Survey Questions</h2>
+		<hr>
+
+		<h3><strong>About You</strong></h3>
+		<h4>Name</h4>
+		<input type="text" name="" id="name" class="form-control" required >
+
+		<h4>Upload Photo</h4>
+		<input type="text" name="" id="photo" class="form-control" required >
+
+		<hr>
+		<div class="question-box">
+			<h4>Your mind is always buzzing with unexplored ideas and plans.</h4>
+
+			<div id="slidecontainer">
+			  <input type="range" min="1" max="10" value="5" class="slider" id="myRange0">
+			  <div class="scale">
+			  	<div class="disagree">Strongly Disagree</div>
+			  	<div class="agree">Strongly Agree</div>			  	
+			  </div>
+			</div>
+		  	<div class="value"><span id="q0"></span></div>			  	
+		</div>
+		
+		<hr>
+		<div class="question-box">
+			<h4>You rely more on your experience than your imagination.</h4>
+
+			<div id="slidecontainer">
+			  <input type="range" min="1" max="10" value="5" class="slider" id="myRange1">
+			  <div class="scale">
+			  	<div class="disagree">Strongly Disagree</div>
+			  	<div class="agree">Strongly Agree</div>			  	
+			  </div>
+			</div>
+		  	<div class="value"><span id="q1"></span></div>			  	
+		</div>
+		
+		<hr>
+		<div class="question-box">
+			<h4>You find it easy to stay relaxed and focused even when there is some pressure.</h4>
+			<div id="slidecontainer">
+			  <input type="range" min="1" max="10" value="5" class="slider" id="myRange2">
+			  <div class="scale">
+			  	<div class="disagree">Strongly Disagree</div>
+			  	<div class="agree">Strongly Agree</div>			  	
+			  </div>
+			</div>
+		  	<div class="value"><span id="q2"></span></div>			  	
+		</div>
+
+		<hr>
+		<div class="question-box">
+			<h4>You rarely do something just out of sheer curiosity.</h4>
+			<div id="slidecontainer">
+			  <input type="range" min="1" max="10" value="5" class="slider" id="myRange3">
+			  <div class="scale">
+			  	<div class="disagree">Strongly Disagree</div>
+			  	<div class="agree">Strongly Agree</div>			  	
+			  </div>
+			</div>
+		  	<div class="value"><span id="q3"></span></div>			  	
+		</div>
+
+		<hr>
+		<div class="question-box">
+			<h4>People can rarely upset you.</h4>
+			<div id="slidecontainer">
+			  <input type="range" min="1" max="10" value="5" class="slider" id="myRange4">
+			  <div class="scale">
+			  	<div class="disagree">Strongly Disagree</div>
+			  	<div class="agree">Strongly Agree</div>			  	
+			  </div>
+			</div>
+		  	<div class="value"><span id="q4"></span></div>			  	
+		</div>
+
+		<hr>
+		<div class="question-box">
+			<h4>It is often difficult for you to relate to other people’s feelings.</h4>
+			<div id="slidecontainer">
+			  <input type="range" min="1" max="10" value="5" class="slider" id="myRange5">
+			  <div class="scale">
+			  	<div class="disagree">Strongly Disagree</div>
+			  	<div class="agree">Strongly Agree</div>			  	
+			  </div>
+			</div>
+		  	<div class="value"><span id="q5"></span></div>			  	
+		</div>
+
+		<hr>
+		<div class="question-box">
+			<h4>In a discussion, truth should be more important than people’s sensitivities.</h4>
+			<div id="slidecontainer">
+			  <input type="range" min="1" max="10" value="5" class="slider" id="myRange6">
+			  <div class="scale">
+			  	<div class="disagree">Strongly Disagree</div>
+			  	<div class="agree">Strongly Agree</div>			  	
+			  </div>
+			</div>
+		  	<div class="value"><span id="q6"></span></div>			  	
+		</div>
+
+		<hr>
+		<div class="question-box">
+			<h4>You rarely get carried away by fantasies and ideas.</h4>
+			<div id="slidecontainer">
+			  <input type="range" min="1" max="10" value="5" class="slider" id="myRange7">
+			  <div class="scale">
+			  	<div class="disagree">Strongly Disagree</div>
+			  	<div class="agree">Strongly Agree</div>			  	
+			  </div>
+			</div>
+		  	<div class="value"><span id="q7"></span></div>			  	
+		</div>
+
+		<hr>
+		<div class="question-box">
+			<h4>Everyone’s views should be respected regardless of whether they are supported by facts.</h4>
+			<div id="slidecontainer">
+			  <input type="range" min="1" max="10" value="5" class="slider" id="myRange8">
+			  <div class="scale">
+			  	<div class="disagree">Strongly Disagree</div>
+			  	<div class="agree">Strongly Agree</div>			  	
+			  </div>
+			</div>
+		  	<div class="value"><span id="q8"></span></div>			  	
+		</div>
+
+		<hr>
+		<div class="question-box">
+			<h4>You feel more energetic after spending time with a group of people.</h4>
+			<div id="slidecontainer">
+			  <input type="range" min="1" max="10" value="5" class="slider" id="myRange9">
+			  <div class="scale">
+			  	<div class="disagree">Strongly Disagree</div>
+			  	<div class="agree">Strongly Agree</div>			  	
+			  </div>
+			</div>
+		  	<div class="value"><span id="q9"></span></div>			  	
+		</div>
+		<hr>
+		<br>
+
+		<!-- Submit Button -->
+		<button type="submit" class="btn btn-primary btn-lg btn-block" id="submit"><i class="fa fa-check-circle" aria-hidden="true"></i>Submit</button>
+
+		<hr>
+	    <footer class="footer">
+	      <div class="container">
+		        <p><a href="/api/friends">API Friends List</a> | <a href="https://github.com/amykslover/Friend-Finder">GitHub Repo</a></p>
+	      </div>
+	    </footer>
+
+	</div>
+
+<script type="text/javascript">
+
+// ======================================SLIDERS=================================
+	var slider0 = document.getElementById("myRange0");
+	var output0 = document.getElementById("q0");
+	output0.innerHTML = slider0.value;
+
+	slider0.oninput = function() {
+	  output0.innerHTML = this.value;
+
+	}
+
+	var slider1 = document.getElementById("myRange1");
+	var output1 = document.getElementById("q1");
+	output1.innerHTML = slider1.value;
+
+	slider1.oninput = function() {
+	  output1.innerHTML = this.value;
+	}
+
+	var slider2 = document.getElementById("myRange2");
+	var output2 = document.getElementById("q2");
+	output2.innerHTML = slider2.value;
+
+	slider2.oninput = function() {
+	  output2.innerHTML = this.value;
+	}
+
+	var slider3 = document.getElementById("myRange3");
+	var output3 = document.getElementById("q3");
+	output3.innerHTML = slider3.value;
+
+	slider3.oninput = function() {
+	  output3.innerHTML = this.value;
+	}
+
+	var slider4 = document.getElementById("myRange4");
+	var output4 = document.getElementById("q4");
+	output4.innerHTML = slider4.value;
+
+	slider4.oninput = function() {
+	  output4.innerHTML = this.value;
+	}
+
+	var slider5 = document.getElementById("myRange5");
+	var output5 = document.getElementById("q5");
+	output5.innerHTML = slider5.value;
+
+	slider5.oninput = function() {
+	  output5.innerHTML = this.value;
+	}
+
+	var slider6 = document.getElementById("myRange6");
+	var output6 = document.getElementById("q6");
+	output6.innerHTML = slider6.value;
+
+	slider6.oninput = function() {
+	  output6.innerHTML = this.value;
+	}
+
+	var slider7 = document.getElementById("myRange7");
+	var output7 = document.getElementById("q7");
+	output7.innerHTML = slider7.value;
+
+	slider7.oninput = function() {
+	  output7.innerHTML = this.value;
+	}
+
+	var slider8 = document.getElementById("myRange8");
+	var output8 = document.getElementById("q8");
+	output8.innerHTML = slider8.value;
+
+	slider8.oninput = function() {
+	  output8.innerHTML = this.value;
+	}
+
+	var slider9 = document.getElementById("myRange9");
+	var output9 = document.getElementById("q9");
+	output9.innerHTML = slider9.value;
+
+	slider9.oninput = function() {
+	  output9.innerHTML = this.value;
+	}
+
+// ======================================SLIDERS=================================
+
+     $("#submit").on("click", function(){ 
+		event.preventDefault();
+	    
+    	var userData = {
+    		personName: $("#name").val(),
+    		personPhoto: $("#photo").val(),
+    		personScores: 
+    		[parseInt($('#q0').text()),
+    		 parseInt($('#q1').text()),
+    		 parseInt($('#q2').text()), 
+    		 parseInt($('#q3').text()), 
+    		 parseInt($('#q4').text()), 
+    		 parseInt($('#q5').text()), 
+    		 parseInt($('#q6').text()), 
+    		 parseInt($('#q7').text()),
+    		 parseInt($('#q8').text()), 
+    		 parseInt($('#q9').text())]
+    	}
+
+
+		var friendData = JSON.stringify(userData);
+
+		$.ajax({
+		    url: "api/friends",
+		    type: "POST",
+		    data: friendData,
+		    contentType: "application/json; charset=utf-8",
+		    dataType: "json"
+		}).done(function(data) {
+			
+	          // If a the post worked, say you are going to kick off the friend finding process
+	          if (data) {
+	            alert("We are going to find you a friend!");
+	          }
+	          else {
+	            alert("Sorry, you weren't added to our database.");
+	          }
+
+	          // Clear the form when submitting
+	          $("#name").val("");
+	          $("#photo").val("");
+		});
+
+     });
+
+
+  </script>
+
+</body>
+</html>
