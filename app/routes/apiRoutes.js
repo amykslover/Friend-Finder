@@ -44,6 +44,6 @@ module.exports = function(app) {
 	});
 
 	app.get('/api/friends', function(request, response) {
-		response.json(friendMatch);
+		response.json(friendsArray);
 	});
 }
