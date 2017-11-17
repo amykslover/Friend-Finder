@@ -12,7 +12,7 @@ module.exports = function(app) {
 		var biggestDifference = 3486784401;
 		var currentUserMatchName;
 		var currentUserMatchPhoto;
-
+		var friendMatch = [];
 		for (var j = 0; j < friendsArray.length; j++) {
 			//Calculate the differences between the current user and
 			//each subsequent user in the array. The match name and
@@ -27,17 +27,23 @@ module.exports = function(app) {
 					biggestDifference = userDifference;
 					currentUserMatchName = friendsArray[j].personName;
 					currentUserMatchPhoto = friendsArray[j].personPhoto;
+					
 				}
 		}
 		//Add current user to the array of possible friend matches
-		console.log(currentUserMatchName);
-		console.log(currentUserMatchPhoto);
-		console.log(userDifference);
 		friendsArray.push(currentUser);
-		response.json(true);
+		
+		//Return match data to be displayed on HTML modal
+		friendMatch = {
+			name: currentUserMatchName,
+			photo: currentUserMatchPhoto,
+			scoreDifference: biggestDifference
+		};
+
+		response.json(friendMatch);
 	});
 
 	app.get('/api/friends', function(request, response) {
-		response.json(friendsArray);
+		response.json(friendMatch);
 	});
 }
